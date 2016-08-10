@@ -15,7 +15,7 @@
 			document.getElementById("sequence").innerHTML = table;
 		}
 	};
-	xhttp.open("GET", "http://192.168.0.107:8099/sequence.xml", true);
+	xhttp.open("GET", "http://github.com/NNattoji/ShortestDistance/blob/master/sequence.xml", true);
 	xhttp.send();
 
 })();
