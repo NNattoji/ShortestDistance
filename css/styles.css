@@ -1,0 +1,44 @@
+#header
+{
+    background-color:#999999;
+	clear:both;
+	width:100%;
+	overflow:auto;
+	height:100px;
+}
+
+#inputFields
+{
+    background-color:#D8D8D8;
+	clear:both;
+	width:100%;
+	overflow:auto;
+	height:75px;
+}
+
+#outputField
+{
+    background-color:#D8D8D8;
+	clear:both;
+	width:100%;
+	overflow:auto;
+	height:50px;
+}
+
+#googleMap
+{
+	clear:none;
+	float:left;
+	width:100%;
+	overflow:auto;
+}
+
+#button
+{
+    background-color:#999999;
+}
+
+#sequence
+{
+    border: 1px solid black;
+}

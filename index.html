@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+<style>
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+	border: 1px solid black;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+		
+	<link href="css/styles.css" rel="stylesheet">	
+    <script type="text/javascript" src="scripts.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+<script>
+function initialize() {
+    var north = new google.maps.LatLng(33.24902, 76.82704);
+    var south = new google.maps.LatLng(8.06890, 77.55230);
+    var east = new google.maps.LatLng(27.12622, 97.16712);
+    var west = new google.maps.LatLng(23.71307, 68.03215); 
+	var myLatLngBounds = new google.maps.LatLngBounds(north, south, east, west); 
+
+	var mapProp = {
+		center: new google.maps.LatLng(21, 78),
+		zoom:7,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+	map.fitBounds(myLatLngBounds); 
+}
+
+
+function loadScript() {
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src = "http://maps.googleapis.com/maps/api/js?key=&sensor=false&callback=initialize";
+	document.body.appendChild(script);
+}
+window.onload = loadScript;
+
+function display() {
+    /*Start: External javascript function call*/
+	var script = document.createElement("script"); 
+	script.type = "text/javascript"; 
+	script.src = "js/scripts.js"; 
+	document.getElementsByTagName("body")[0].appendChild(script);	
+	/*End: External javascript function call*/ 
+}
+
+function ajaxCall() {
+    /*Start: External javascript function call*/
+	var script = document.createElement("script"); 
+	script.type = "text/javascript"; 
+	script.src = "js/ajax.js"; 
+	document.getElementsByTagName("body")[0].appendChild(script);	
+	/*End: External javascript function call*/ 
+}
+
+</script>
+  </head>
+
+  <body>
+	<div id="header" align=center>
+	  <br>
+	  <h1 align=center> Distance Between Cities: India</h1>
+	</div>
+	<div id="inputFields" align=center>
+	  <br>
+	  From: <input type="text" id="from" value="">
+	  To:  <input type="text" id="to" value="">
+	  <button onclick="display()" id="button">Submit</button>
+	</div>
+	<div id="outputDisplay">
+	  <div id="googleMap" style="width:500px;height:500px;"></div>
+	  <br><br><br>
+	  <div id="displayWriting" align=center>
+		<button onclick="ajaxCall()" id="button">Click Here</button> to see the list of major cities in India:
+		<br><br>
+		<table id="sequence"></table>
+	  </div>
+	</div>
+	<div id="outputField" align=center>
+	  <br>
+	  Distance:  <input type="text" id="distance" name="Result" value="">
+	</div>
+  </body>
+</html>
+
